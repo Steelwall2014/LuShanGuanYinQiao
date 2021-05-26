@@ -63,7 +63,7 @@ p {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
-  background-image: url("../assets/guanyinqiao.png");
+  background-image: url("../assets/guanyinqiao.jpg");
 }
 
 .foreground {
