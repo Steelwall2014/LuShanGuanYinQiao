@@ -3,7 +3,7 @@
     <div class="background">
       <div id="img"></div>
     </div>
-    <div class="foreground">
+    <div class="foreground cover-foreground">
       <div class="text-background">
         <h1 class="text-title">庐山观音桥</h1>
 
@@ -20,7 +20,7 @@
 <style>
 @font-face {
   font-family: JX ZhuoKai;
-  src: url("../assets/江西拙楷.ttf");
+  src: url("../assets/江西拙楷.woff");
 }
 
 p {
@@ -29,7 +29,7 @@ p {
 
 @font-face {
   font-family: MaShanZheng Regular;
-  src: url("../assets/MaShanZheng-Regular.ttf");
+  src: url("../assets/MaShanZheng-Regular.woff");
 }
 
 p {
@@ -65,20 +65,23 @@ p {
   background-size: cover;
   background-image: url("../assets/guanyinqiao.jpg");
 }
-
 .foreground {
+  position: relative;
+  width: 100%;
+  z-index:1;
+  vertical-align: middle;
+  text-align: center;
+  text-shadow: 0 0 100px rgba(0, 0, 0, 100);
+  color: #fff;
+}
+.foreground.cover-foreground {
   position: absolute;
   top: 25%;
   left: 100px;
   z-index: 100;
   display: inline-block;
-  vertical-align: middle;
-
   width: calc(100% - 200px);
-  text-align: center;
-  color: #fff;
   margin-top: -50px;
-  text-shadow: 0 0 100px rgba(0, 0, 0, 100);
 }
 
 .text-title {
@@ -134,6 +137,7 @@ p {
   width: 100%;
   padding: 15px;
   text-align: center;
+  z-index: 101;
 }
 
 .scroll-invite-btn {
@@ -174,7 +178,7 @@ p {
 </style>
 <script>
 function scroll_to_content() {
-  console.log(1);
+  document.getElementById("main-sections").scrollIntoView({ block: 'start', behavior: 'smooth' })
 }
 export default {
   name: "Cover",

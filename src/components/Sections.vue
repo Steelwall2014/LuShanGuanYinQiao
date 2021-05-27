@@ -1,6 +1,6 @@
 <template>
-    <div class="main-sections" id="main-sections">
-        待完成，这里将放置主要的故事地图展示内容
+    <div class="main-sections" id="main-sections" ref="main_sections">
+        <Section1/>
     </div>
 </template>
 <style scoped>
@@ -13,7 +13,11 @@
 }
 </style>
 <script>
+import Section1 from "./Section1.vue"
 export default ({
-    name: "main-sections"
+    name: "main-sections",
+    components: {
+        Section1
+    }
 })
 </script>
